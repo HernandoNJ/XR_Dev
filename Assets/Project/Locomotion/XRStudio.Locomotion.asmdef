@@ -1,0 +1,17 @@
+{
+    "name": "XRStudio.Locomotion",
+    "rootNamespace": "",
+    "references": [
+        "GUID:870b58ac564b4854f963458db9ce41e7",
+        "GUID:673bca6fb324cca40b8bf61ce98f12eb"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

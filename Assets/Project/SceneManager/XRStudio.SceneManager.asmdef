@@ -1,0 +1,17 @@
+{
+    "name": "XRStudio.SceneManager",
+    "rootNamespace": "",
+    "references": [
+        "GUID:870b58ac564b4854f963458db9ce41e7",
+        "GUID:8401e266f1393684a8e0c3e4dc0edcf6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

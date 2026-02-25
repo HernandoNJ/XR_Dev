@@ -1,0 +1,16 @@
+{
+    "name": "XRStudio.Physics",
+    "rootNamespace": "",
+    "references": [
+        "GUID:870b58ac564b4854f963458db9ce41e7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
