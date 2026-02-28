@@ -6,11 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SceneSwitcher.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Testing/Test.unity
-    guid: e01afebc06fbae6488f9115a41f1428b
+    path: Assets/Tutorials/VRGame_Valem/Scenes/MainVR.unity
+    guid: 19ad7ef38b546d947ad2966da63abf14
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fc6e53924df355e4bb14babc7f1a424a, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 84a2ac0c2d9a0374187004f08501b4a3, type: 2}
   m_UseUCBPForAssetBundles: 0
