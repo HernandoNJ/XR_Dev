@@ -27,7 +27,7 @@ MonoBehaviour:
   m_BrgStripping: 0
   m_LogWhenShaderIsCompiled: 0
   m_CameraRelativeLightCulling: 0
-  m_CameraRelativeShadowCulling: 0
+  m_CameraRelativeShadowCulling: 1
   m_VideoShadersIncludeMode: 2
   m_AlwaysIncludedShaders:
   - {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
@@ -61,7 +61,9 @@ MonoBehaviour:
   m_PlatformBuildProfile:
     rid: 4776491908726522041
   m_OverrideGlobalSceneList: 1
-  m_Scenes: []
+  m_Scenes:
+  - m_enabled: 1
+    m_path: Assets/Projects/VR_Therapy/Scenes/VR_Therapy.unity
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
