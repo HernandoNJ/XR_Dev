@@ -978,7 +978,13 @@ MonoBehaviour:
     - line: '|   XboxOneOverrideIdentityName: '
     - line: '|   XboxOneOverrideIdentityPublisher: '
     - line: '|   vrEditorSettings: {}'
-    - line: '|   cloudServicesEnabled: {}'
+    - line: '|   cloudServicesEnabled:'
+    - line: '|     Build: 0'
+    - line: '|     Game Performance: 0'
+    - line: '|     Legacy Analytics: 0'
+    - line: '|     Purchasing: 0'
+    - line: '|     UDP: 0'
+    - line: '|     Unity Ads: 0'
     - line: '|   luminIcon:'
     - line: '|     m_Name: '
     - line: '|     m_ModelFolderPath: '
@@ -1000,11 +1006,11 @@ MonoBehaviour:
     - line: '|   captureStartupLogs: {}'
     - line: '|   activeInputHandler: 1'
     - line: '|   windowsGamepadBackendHint: 0'
-    - line: '|   cloudProjectId: '
+    - line: '|   cloudProjectId: 7ec32ba9-548e-45e0-a574-ad59ac0fff1d'
     - line: '|   framebufferDepthMemorylessMode: 0'
     - line: '|   qualitySettingsNames: []'
-    - line: '|   projectName: '
-    - line: '|   organizationId: '
+    - line: '|   projectName: VrTherapy'
+    - line: '|   organizationId: hernando-nj'
     - line: '|   cloudEnabled: 0'
     - line: '|   legacyClampBlendShapeWeights: 0'
     - line: '|   hmiLoadingImage: {instanceID: 0}'
@@ -1060,6 +1066,6 @@ MonoBehaviour:
   m_Script: {fileID: 15010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Quality Settings
   m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.Build.Profile.BuildProfileQualitySettings
-  m_DefaultQualityLevel: Mobile
+  m_DefaultQualityLevel: VR_Quest2
   m_QualityLevels:
-  - Mobile
+  - VR_Quest2
