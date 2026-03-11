@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 public class ButtonsHandler : MonoBehaviour
 {
-    void OnEnable()
+    private void OnEnable()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
         var heartBtn = root.Q<Button>("HeartBtn");

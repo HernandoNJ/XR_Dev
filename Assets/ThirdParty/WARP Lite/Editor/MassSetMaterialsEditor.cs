@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using Codice.CM.Common.Checkin.Partial;
 
 namespace WARP
 {
@@ -50,13 +51,18 @@ namespace WARP
         private void CacheAllGameObjectsInScene()
         {
             cachedGameObjects.Clear();
-            GameObject[] allObjects = FindObjectsOfType<GameObject>();
+
+            var allObjects = FindObjectsByType<GameObject>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None);
+
             cachedGameObjects.AddRange(allObjects);
         }
 
         void OnGUI()
         {
-            materialToAssign = (Material)EditorGUILayout.ObjectField("Material to Assign", materialToAssign, typeof(Material), false);
+            materialToAssign =
+                (Material)EditorGUILayout.ObjectField("Material to Assign", materialToAssign, typeof(Material), false);
 
             GUILayout.Space(10);
 
