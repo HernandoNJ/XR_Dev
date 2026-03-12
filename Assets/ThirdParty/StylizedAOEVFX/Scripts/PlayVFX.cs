@@ -8,41 +8,41 @@ namespace PlayDecalVFX
 {
 public class PlayVFX : MonoBehaviour
 {
-    private DecalProjector decal;
-    private Material mat;
-    private VisualEffect effect;
+    private DecalProjector _decal;
+    private Material _mat;
+    private VisualEffect _effect;
 
-    private float anticipation;
-    private float dissapation;
-    private AnimationCurve showIndicatorCurve;
-    private AnimationCurve dissolveCurve;
-    private float startTime;
-    private float lifetime;
+    private float _anticipation;
+    private float _dissapation;
+    private AnimationCurve _showIndicatorCurve;
+    private AnimationCurve _dissolveCurve;
+    private float _startTime;
+    private float _lifetime;
 
-    private bool effectPlayed = false;
+    private bool _effectPlayed;
     // Start is called before the first frame update
     void Start()
     {
         //Assign variables
-        effect = gameObject.GetComponent<VisualEffect>();
-        effect.Play();
-        decal = gameObject.GetComponentInChildren<DecalProjector>();
-        mat = decal.material;
-        anticipation = effect.GetFloat("Anticipation");
-        dissapation = effect.GetFloat("Dissapation");
-        startTime = Time.time;
-        showIndicatorCurve = effect.GetAnimationCurve("IndicatorCurve");
-        dissolveCurve = effect.GetAnimationCurve("DissolveCurve");
+        _effect = gameObject.GetComponent<VisualEffect>();
+        _effect.Play();
+        _decal = gameObject.GetComponentInChildren<DecalProjector>();
+        _mat = _decal.material;
+        _anticipation = _effect.GetFloat("Anticipation");
+        _dissapation = _effect.GetFloat("Dissapation");
+        _startTime = Time.time;
+        _showIndicatorCurve = _effect.GetAnimationCurve("IndicatorCurve");
+        _dissolveCurve = _effect.GetAnimationCurve("DissolveCurve");
 
         //Apply properties to decal shader
-        mat.SetTexture("_Texture2D", effect.GetTexture("IndicatorTexture"));
-        mat.SetColor("_BrightColor", effect.GetVector4("BrightColor"));
-        mat.SetColor("_DarkColor", effect.GetVector4("DarkColor"));
-        mat.SetInt("_UseLUT", effect.GetBool("UseLUT") ? 1 : 0);
-        mat.SetTexture("_LUT", effect.GetTexture("LUT"));
+        _mat.SetTexture("_Texture2D", _effect.GetTexture("IndicatorTexture"));
+        _mat.SetColor("_BrightColor", _effect.GetVector4("BrightColor"));
+        _mat.SetColor("_DarkColor", _effect.GetVector4("DarkColor"));
+        _mat.SetInt("_UseLUT", _effect.GetBool("UseLUT") ? 1 : 0);
+        _mat.SetTexture("_LUT", _effect.GetTexture("LUT"));
 
         //Apply diameter to decal
-        decal.size = new Vector3(effect.GetFloat("Diameter") * 1.15f, effect.GetFloat("Diameter") * 1.15f, effect.GetFloat("Diameter") * 1.15f);
+        _decal.size = new Vector3(_effect.GetFloat("Diameter") * 1.15f, _effect.GetFloat("Diameter") * 1.15f, _effect.GetFloat("Diameter") * 1.15f);
 
     }
 
@@ -50,28 +50,28 @@ public class PlayVFX : MonoBehaviour
     void Update()
     {
         //calc lifetime depending on effect
-        if(effect.name == "PlantHealDecalPrefab(Clone)")
+        if(_effect.name == "PlantHealDecalPrefab(Clone)")
         {
-            lifetime = (Time.time - startTime) * (1 / (anticipation + dissapation));
+            _lifetime = (Time.time - _startTime) * (1 / (_anticipation + _dissapation));
         }
         else
         {
-            lifetime = (Time.time - startTime) * (1 / anticipation);
+            _lifetime = (Time.time - _startTime) * (1 / _anticipation);
         }
         
         
         //Animate Properties
-        mat.SetFloat("_SHowIndicator", showIndicatorCurve.Evaluate(lifetime));
-        mat.SetFloat("_Dissolve", dissolveCurve.Evaluate(lifetime));
+        _mat.SetFloat("_SHowIndicator", _showIndicatorCurve.Evaluate(_lifetime));
+        _mat.SetFloat("_Dissolve", _dissolveCurve.Evaluate(_lifetime));
 
 
         // Register PlayStart
-        if (effect.aliveParticleCount > 0 && !effectPlayed)
+        if (_effect.aliveParticleCount > 0 && !_effectPlayed)
         {
-            effectPlayed = true;
+            _effectPlayed = true;
         }
         //Delete Game Object after Playing
-        if (effect.aliveParticleCount == 0 && effectPlayed && lifetime > anticipation + dissapation)
+        if (_effect.aliveParticleCount == 0 && _effectPlayed && _lifetime > _anticipation + _dissapation)
         {
             Destroy(gameObject);
         }

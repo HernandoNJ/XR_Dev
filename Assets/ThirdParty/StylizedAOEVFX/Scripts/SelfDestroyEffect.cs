@@ -8,24 +8,24 @@ namespace VFXSelfDestroy
 
 public class SelfDestroyEffect : MonoBehaviour
 {
-    private VisualEffect effect;
-    private bool effectPlayed = false;
+    private VisualEffect _effect;
+    private bool _effectPlayed;
     // Start is called before the first frame update
     void Start()
     {
-        effect = gameObject.GetComponent<VisualEffect>();
-        effect.Play();
+        _effect = gameObject.GetComponent<VisualEffect>();
+        _effect.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(effect.aliveParticleCount > 0 && !effectPlayed)
+        if(_effect.aliveParticleCount > 0 && !_effectPlayed)
         {
-            effectPlayed = true;
+            _effectPlayed = true;
         }
 
-        if(effect.aliveParticleCount == 0 && effectPlayed)
+        if(_effect.aliveParticleCount == 0 && _effectPlayed)
         {
             Destroy(gameObject);
         }

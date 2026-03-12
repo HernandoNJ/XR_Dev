@@ -14,37 +14,37 @@ public class HeartDockController : MonoBehaviour
 {
     [Header("References")]
     [Tooltip("XR Player root — must have CharacterController")]
-    [SerializeField] private CharacterController _characterController;
+    [SerializeField] private CharacterController characterController;
 
     [Tooltip("Main Camera (head position)")]
-    [SerializeField] private Transform _xrCamera;
+    [SerializeField] private Transform xrCamera;
 
     [Header("Chest Estimation")]
     [Tooltip("0 = body center, 1 = head. 0.7 recommended based on testing.")]
     [Range(0f, 1f)]
-    [SerializeField] private float _bodyToHeadRatio = 0.7f;
+    [SerializeField] private float bodyToHeadRatio = 0.7f;
 
     [Header("Dock Offset from Estimated Chest")]
     [Tooltip("Forward offset from chest toward front of body")]
-    [SerializeField] private float _offsetZ = 0.15f;
+    [SerializeField] private float offsetZ = 0.15f;
 
     [Tooltip("Vertical offset from chest")]
-    [SerializeField] private float _offsetY = 0.05f;
+    [SerializeField] private float offsetY = 0.05f;
 
     [Tooltip("Horizontal offset from chest center")]
-    [SerializeField] private float _offsetX = 0f;
+    [SerializeField] private float offsetX;
 
     [Header("Visual Reference (optional)")]
-    [SerializeField] private Renderer _dockVisual;
+    [SerializeField] private Renderer dockVisual;
 
     private XRSocketInteractor _socket;
-    private bool _isDocked = false;
+    private bool _isDocked;
     private Transform _playerTransform;
 
     private void Awake()
     {
         _socket = GetComponent<XRSocketInteractor>();
-        _playerTransform = _characterController.transform;
+        _playerTransform = characterController.transform;
     }
 
     private void OnEnable()
@@ -61,7 +61,7 @@ public class HeartDockController : MonoBehaviour
 
     private void Start()
     {
-        if (_characterController == null || _xrCamera == null)
+        if (characterController == null || xrCamera == null)
         {
             Debug.LogError("[HeartDockController] Missing references!", this);
             return;
@@ -99,27 +99,27 @@ public class HeartDockController : MonoBehaviour
     private void UpdateDockPosition()
     {
         // Body center in world space — stable, unaffected by head movement
-        Vector3 bodyCenter = _playerTransform.TransformPoint(_characterController.center);
+        Vector3 bodyCenter = _playerTransform.TransformPoint(characterController.center);
 
         // Lerp toward head to estimate chest/sternum
-        Vector3 estimatedChest = Vector3.Lerp(bodyCenter, _xrCamera.position, _bodyToHeadRatio);
+        Vector3 estimatedChest = Vector3.Lerp(bodyCenter, xrCamera.position, bodyToHeadRatio);
 
         // Horizontal player forward only — ignores head tilt completely
         Vector3 bodyForward = new Vector3(_playerTransform.forward.x, 0f, _playerTransform.forward.z).normalized;
         Vector3 bodyRight   = new Vector3(_playerTransform.right.x,   0f, _playerTransform.right.z).normalized;
 
         transform.position = estimatedChest
-            + Vector3.up  * _offsetY
-            + bodyForward * _offsetZ
-            + bodyRight   * _offsetX;
+            + Vector3.up  * offsetY
+            + bodyForward * offsetZ
+            + bodyRight   * offsetX;
 
         transform.rotation = Quaternion.identity;
     }
 
     private void SetDockVisual(bool visible)
     {
-        if (_dockVisual != null)
-            _dockVisual.enabled = visible;
+        if (dockVisual != null)
+            dockVisual.enabled = visible;
     }
 
 // #if UNITY_EDITOR
