@@ -75,11 +75,11 @@ MonoBehaviour:
     - line: '|   AndroidProfiler: 0'
     - line: '|   AndroidFilterTouchesWhenObscured: 0'
     - line: '|   AndroidEnableSustainedPerformanceMode: 0'
-    - line: '|   defaultScreenOrientation: 4'
+    - line: '|   defaultScreenOrientation: 3'
     - line: '|   targetDevice: 2'
     - line: '|   useOnDemandResources: 0'
     - line: '|   accelerometerFrequency: 60'
-    - line: '|   companyName: XRStudioIndie'
+    - line: '|   companyName: XRStudio'
     - line: '|   productName: VrTherapy'
     - line: '|   defaultCursor: {instanceID: 0}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
@@ -211,7 +211,7 @@ MonoBehaviour:
     - line: '|   loadStoreDebugModeEnabled: 0'
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
-    - line: '|   bundleVersion: 0.1.0'
+    - line: '|   bundleVersion: 1.0.0'
     - line: '|   preloadedAssets: []'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
@@ -234,7 +234,7 @@ MonoBehaviour:
     - line: '|   androidMaxAspectRatio: 2.4'
     - line: '|   androidMinAspectRatio: 1'
     - line: '|   applicationIdentifier:'
-    - line: '|     Android: com.XRStudioIndie.VrTherapy'
+    - line: '|     Android: com.XRStudio.VrTherapy'
     - line: '|     Standalone: com.Unity-Technologies.com.unity.template.urp-blank'
     - line: '|     iPhone: com.Unity-Technologies.com.unity.template.urp-blank'
     - line: '|   buildNumber:'
@@ -243,9 +243,9 @@ MonoBehaviour:
     - line: '|     iPhone: 0'
     - line: '|     tvOS: 0'
     - line: '|   overrideDefaultApplicationIdentifier: 1'
-    - line: '|   AndroidBundleVersionCode: 1'
-    - line: '|   AndroidMinSdkVersion: 29'
-    - line: '|   AndroidTargetSdkVersion: 32'
+    - line: '|   AndroidBundleVersionCode: 11'
+    - line: '|   AndroidMinSdkVersion: 32'
+    - line: '|   AndroidTargetSdkVersion: 34'
     - line: '|   AndroidPreferredInstallLocation: 0'
     - line: '|   AndroidPreferredDataLocation: 1'
     - line: '|   aotOptions: '
@@ -339,8 +339,8 @@ MonoBehaviour:
     - line: '|   AndroidAllowedArchitectures: -13'
     - line: '|   AndroidSplashScreenScale: 0'
     - line: '|   androidSplashScreen: {instanceID: 0}'
-    - line: '|   AndroidKeystoreName: '
-    - line: '|   AndroidKeyaliasName: '
+    - line: '|   AndroidKeystoreName: D:/Proyectos/VRTherapy/Varios/KeyStore-12Mar/user.keystore'
+    - line: '|   AndroidKeyaliasName: admin'
     - line: '|   AndroidEnableArmv9SecurityFeatures: 0'
     - line: '|   AndroidEnableArm64MTE: 0'
     - line: '|   AndroidBuildApkPerCpuArchitecture: 0'
@@ -352,7 +352,7 @@ MonoBehaviour:
     - line: '|   AndroidEnableTango: 0'
     - line: '|   androidEnableBanner: 1'
     - line: '|   androidUseLowAccuracyLocation: 0'
-    - line: '|   androidUseCustomKeystore: 0'
+    - line: '|   androidUseCustomKeystore: 1'
     - line: '|   m_AndroidBanners:'
     - line: '|   - width: 320'
     - line: '|     height: 180'
@@ -595,7 +595,7 @@ MonoBehaviour:
     - line: '|   m_BuildTargetBatching:'
     - line: '|   - m_BuildTarget: Android'
     - line: '|     m_StaticBatching: 1'
-    - line: '|     m_DynamicBatching: 0'
+    - line: '|     m_DynamicBatching: 1'
     - line: '|   m_BuildTargetShaderSettings: []'
     - line: '|   m_BuildTargetGraphicsJobs: []'
     - line: '|   m_BuildTargetGraphicsJobMode: []'
@@ -1048,7 +1048,7 @@ MonoBehaviour:
         m_ExportAsGoogleAndroidProject: 0
         m_DebugSymbolLevel: 1
         m_DebugSymbolFormat: 5
-        m_CurrentDeploymentTargetId: __builtin__target_default
+        m_CurrentDeploymentTargetId: 1WMHH8470T1275
         m_BuildType: 2
         m_LinkTimeOptimization: 0
         m_BuildAppBundle: 0
